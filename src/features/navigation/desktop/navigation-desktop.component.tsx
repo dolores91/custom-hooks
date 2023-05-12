@@ -1,12 +1,9 @@
 import { SearchBar } from 'features/search';
-import { FC } from 'react';
+import useLanguageContext from '../../../context/useLanguageContext';
 import { NavLink } from 'react-router-dom';
 
-type NavMobileProps = {
-    t: (key: string) => string
-}
-
-const NavDesktop: FC<NavMobileProps> = ({t}:NavMobileProps) => {
+const NavDesktop = (): JSX.Element => {
+  const { t } = useLanguageContext();
   return (
     <div className={'container nav'} style={{ justifyContent: 'space-between' }}>
               <div className={'container'} style={{ width: 400 }}>

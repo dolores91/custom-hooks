@@ -1,13 +1,8 @@
-import { FC } from 'react';
-import Languages from "features/language/language.types";
+import useLanguageContext from './../../context/useLanguageContext';
 
-type LanguageComponentProps = {
-    language: Languages
-    setLanguage: (language: Languages) => void
-    t: (key: string) => string;
-}
+const LanguageComponent = () => {
+    const { setLanguage, language, t } = useLanguageContext();
 
-const LanguageComponent: FC<LanguageComponentProps> = ({language, setLanguage, t}: LanguageComponentProps) => {
   return (
     <div className={'language'}>
       <div

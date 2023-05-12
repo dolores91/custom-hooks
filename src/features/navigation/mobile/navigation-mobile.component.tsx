@@ -1,13 +1,12 @@
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { SearchBar } from 'features/search';
 import {FC, useState} from 'react';
+import useLanguageContext from '../../../context/useLanguageContext';
 import { NavLink } from 'react-router-dom';
 
-type NavMobileProps = {
-  t: (key: string) => string
-}
 
-const NavMobile: FC<NavMobileProps> = ({t}: NavMobileProps) => {
+const NavMobile = (): JSX.Element => {
+  const { t } = useLanguageContext();
   const [isOpen, setOpen] = useState<boolean>(false);
   const toggle = () => setOpen((value) => !value);
 
